@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Barang</title>
+    <title>Update Barang</title>
 </head>
 <body>
     <?php 
@@ -21,7 +21,7 @@
     ?>
     <h1>Update Barang</h1>
     <br>
-    <form action="#" method="post">
+    <form action="./proses/edit-barang.php" method="post">
         <input type="hidden" name="id" value="<?= $data['id']; ?>">
         Nama : <input type="text" name="nama" value="<?= $data['nama']; ?>"><br>
         Kategori : <input type="text" name="kategori" value="<?= $data['kategori']; ?>"><br>
