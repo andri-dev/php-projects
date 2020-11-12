@@ -11,9 +11,9 @@ if($_GET['add']){
 
     $success = addPelanggan($connect, $nama, $alamat);
     if($success) {
-        header("Location: ../pelanggan.php");
+        header("Location: ../pelanggan.php?status=success&message=Pelanggan berhasil ditambahkan");
     } else {
-        header("Location: ../add-pelanggan.php");
+        header("Location: ../add-pelanggan.php?status=warning&message=Pelanggan gagal ditambahkan");
     }
 }
 
@@ -25,9 +25,9 @@ if($_GET['edit']){
 
     $success = editPelanggan($connect, $id, $nama, $alamat);
     if($success) {
-        header("Location: ../pelanggan.php");
+        header("Location: ../pelanggan.php?status=success&message=Pelanggan berhasil diedit");
     } else {
-        header("Location: ../");
+        header("Location: ../pelanggan.php?status=warning&message=Pelanggan gagal diedit");
     }
 }
 
@@ -37,9 +37,9 @@ if($_GET['delete']){
 
     $success = deletePelanggan($connect, $id);
     if($success) {
-        header("Location: ../pelanggan.php");
+        header("Location: ../pelanggan.php?status=success&message=Pelanggan berhasil dihapus");
     } else {
-        header("Location: ../");
+        header("Location: ../pelanggan.php?status=warning&message=Pelanggan gagal dihapus");
     }
 }
 

@@ -7,6 +7,7 @@ include("./template/header.php");
         <div class="row mb-5">
           <div class="col-12 mt-5 mb-3">
             <h3>Edit Barang</h3>
+            <?php include('utils/alert.php') ?>
           </div>
           <div class="col-12">
           <?php 

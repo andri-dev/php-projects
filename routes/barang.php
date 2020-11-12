@@ -11,9 +11,9 @@ if($_GET['add']){
 
     $success = addBarang($connect, $nama, $harga);
     if($success) {
-        header("Location: ../barang.php");
+        header("Location: ../barang.php?status=success&message=Barang berhasil ditambahkan");
     } else {
-        header("Location: ../add-barang.php");
+        header("Location: ../add-barang.php?status=warning&message=Barang gagal ditambahkan");
     }
 }
 
@@ -25,9 +25,9 @@ if($_GET['edit']){
 
     $success = editBarang($connect, $id, $nama, $harga);
     if($success) {
-        header("Location: ../barang.php");
+        header("Location: ../barang.php?status=success&message=Barang berhasil diedit");
     } else {
-        header("Location: ../");
+        header("Location: ../barang.php?status=warning&message=Barang gagal diedit");
     }
 }
 
@@ -37,9 +37,9 @@ if($_GET['delete']){
 
     $success = deleteBarang($connect, $id);
     if($success) {
-        header("Location: ../barang.php");
+        header("Location: ../barang.php?status=success&message=Barang berhasil dihapus");
     } else {
-        header("Location: ../");
+        header("Location: ../barang.php?status=warning&message=Barang berhasil dihapus");
     }
 }
 

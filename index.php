@@ -12,10 +12,13 @@ include("./template/header.php");
         </p>
         <hr class="my-2" />
         <p class="lead">
-          <a class="btn btn-primary btn-md" href="./barang.html" role="button"
+          <a class="btn btn-primary btn-md" href="./barang.php" role="button"
             >Barang</a
           >
-          <a class="btn btn-primary btn-md" href="#" role="button">Penjualan</a>
+          <a class="btn btn-primary btn-md" href="./pelanggan.php" role="button"
+            >Pelanggan</a
+          >
+          <a class="btn btn-primary btn-md" href="./penjualan.php" role="button">Penjualan</a>
         </p>
       </div>
     </div>
