@@ -7,13 +7,13 @@ include("./template/header.php");
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 mt-5 mb-1">
-            <h3>Daftar Barang</h3>
+            <h3>Daftar Pelanggan</h3>
             <?php include('utils/alert.php') ?>
           </div>
           <div class="col-12">
             <!-- Listing barang -->
             <div id="toolbar">
-              <a class="btn btn-primary mr-1" href="add-barang.php"
+              <a class="btn btn-primary mr-1" href="add-pelanggan.php"
                 ><i class="fa fa-plus"></i> Tambah</a
               >
             </div>
@@ -33,32 +33,32 @@ include("./template/header.php");
               >
                 <thead class="bg-dark text-white">
                   <tr>
-                    <th data-sortable="true" data-field="id">Kode</th>
+                    <th data-sortable="true" data-field="id">No</th>
                     <th data-sortable="true" data-field="nama">Nama</th>
-                    <th data-sortable="true" data-field="harga">Harga</th>
+                    <th data-sortable="true" data-field="alamat">Alamat</th>
                     <th data-field="action"><i class="fa fa-cogs"></i></th>
                   </tr>
                 </thead>
                 <tbody>
                 <?php 
                   require_once('./config/db.php');
-                  require_once('./controllers/Barang.php');
+                  require_once('./controllers/Pelanggan.php');
 
                   $connect = connect();
-                  $query = getAllBarang($connect);
+                  $query = getAllPelanggan($connect);
               
                   if(mysqli_num_rows($query) > 0 ) {
                       while($data = mysqli_fetch_array($query)){
               ?>
                 <tr>
-                    <th scope="row"><?= $data['kodebarang']; ?></th>
-                    <td><?= $data['namabarang']; ?></td>
-                    <td>Rp. <?= $data['hargabarang']; ?></td>
+                    <th scope="row"><?= $data['nopelanggan']; ?></th>
+                    <td><?= $data['namapelanggan']; ?></td>
+                    <td><?= $data['alamat']; ?></td>
                     <td>
-                      <a class="btn-sm btn-warning text-white mr-1 p-2" href="edit-barang.php?id=<?= $data['kodebarang']; ?>"
+                      <a class="btn-sm btn-warning text-white mr-1 p-2" href="edit-pelanggan.php?id=<?= $data['nopelanggan']; ?>"
                         ><i class="fa fa-edit" aria-hidden="true"></i></a
                       >
-                      <a class="btn-sm btn-danger text-white mr-1 p-2" onclick="confirmDeleteBarang(<?= $data['kodebarang']; ?>)" href="#"
+                      <a class="btn-sm btn-danger text-white mr-1 p-2" onclick="confirmDeletePelanggan(<?= $data['nopelanggan']; ?>)" href="#"
                         ><i class="fa fa-trash"></i></a
                       >
                     </td>

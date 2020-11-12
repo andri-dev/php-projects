@@ -6,32 +6,32 @@ include("./template/header.php");
 <div class="container">
         <div class="row mb-5">
           <div class="col-12 mt-5 mb-3">
-            <h3>Edit Barang</h3>
+            <h3>Edit Pelanggan</h3>
           </div>
           <div class="col-12">
           <?php 
             require_once('./config/db.php');
-            require_once('./controllers/Barang.php');
+            require_once('./controllers/Pelanggan.php');
 
             $connect = connect();
             $id = $_GET['id'];
     
-            $query = getBarang($connect, $id);
+            $query = getPelanggan($connect, $id);
             
             if(mysqli_num_rows($query) > 0 ) { 
               $data = mysqli_fetch_array($query); ?>
 
-                <form action="routes/barang.php?edit=true" method="post">
+                <form action="routes/pelanggan.php?edit=true" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="nama">Nama Barang</label>
+                        <label for="nama">Nama Pelanggan</label>
                         <input type="hidden" name="id" value="<?= $id ?>">
                         <input
                             type="text"
                             class="form-control"
                             name="nama"
                             maxlength="25"
-                            value="<?= $data['namabarang']; ?>"
+                            value="<?= $data['namapelanggan']; ?>"
                             id="nama"
                             required
                         />
@@ -39,15 +39,15 @@ include("./template/header.php");
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="harga">Harga</label>
+                            <label for="alamat">Alamat</label>
                             <input
-                                type="number"
-                                name="harga"
+                                type="text"
+                                name="alamat"
                                 class="form-control"
                                 min="0"
                                 maxlength="25"
-                                id="harga"
-                                value="<?= $data['hargabarang']; ?>"
+                                id="alamat"
+                                value="<?= $data['alamat']; ?>"
                                 required
                             />
                             </div>
@@ -56,7 +56,7 @@ include("./template/header.php");
                 </form>
             <?php
                 } else {
-                    header("Location: barang.php");
+                    header("Location: pelanggan.php");
                 } 
             ?>
 

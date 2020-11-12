@@ -4,11 +4,11 @@ function confirmDeleteBarang(id) {
 }
 
 function confirmDeletePelanggan(id) {
-  if (confirm('Apakah kamu yakin menghapus barang ini?'))
+  if (confirm('Apakah kamu yakin menghapus pelanggan ini?'))
     location.href = `./routes/pelanggan.php?delete=true&id=${id}`;
 }
 
 function confirmDeletePenjualan(id) {
-  if (confirm('Apakah kamu yakin menghapus barang ini?'))
+  if (confirm('Apakah kamu yakin menghapus penjualan ini?'))
     location.href = `./routes/penjualan.php?delete=true&id=${id}`;
 }
