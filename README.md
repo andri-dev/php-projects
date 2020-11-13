@@ -1,2 +1,3 @@
 # php-projects
-My PHP Projects
+
+## Select a branch to search for projects
